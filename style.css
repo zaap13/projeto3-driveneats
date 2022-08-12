@@ -24,7 +24,7 @@
     line-height: 55px;
     letter-spacing: -0.012em;
 
-color: #FFFFFF;
+    color: #FFFFFF;
 }
 
 .header h2 {
@@ -41,7 +41,6 @@ color: #FFFFFF;
     display: flex;
     flex-direction: column;
     margin-top: 92px;
-    padding-left: 20px;
     font-family: 'Roboto';
     background-color: #E5E5E5;
 }
@@ -49,6 +48,8 @@ color: #FFFFFF;
 .container {
     display: flex;
     flex-direction: column;
+    gap: 20px;
+    padding: 20px;
 }
 
 .container h1 {
@@ -64,19 +65,74 @@ color: #FFFFFF;
 .food {
     display: flex;
     flex-direction: row;
+    gap: 15px;
 }
 
 .food-box {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    width: 172px;
+    height: 216px;
+    background: #FFFFFF;
+    font-family: 'Roboto';
+    box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.25);
+    border-radius: 9px;
+    align-items: flex-start;
+    justify-content: space-around;
+    padding-left: 10px;
+}
+
+.food-box img {
+    align-self: center;
+    height: 87px;
+    border-radius: 4px;
+}
+
+.food-box h1 {
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: #333333;
+}
+
+.food-box h2 {
+
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 18px;
+
+    color: #A6A6A6;
+}
+
+.food-box h3 {
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: #000000;
 }
 
 .footer {
+
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .button {
+    width: 364px;
+    height: 61px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 0.018em;
     border: none;
+    color: #FFFFFF;
+
+    background: #CBCBCB;
+    border-radius: 50px;
 }
