@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>DrivenEats - Sua comida em 6 minutos</title>
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -19,73 +19,91 @@
         <div class="container">
             <h1>Primeiro, seu prato</h1>
             <div class="food prato">
-                <button class="food-box hamburguer" onclick="selecionarPrato('hamburguer')">
+                <button class="food-box hamburguer" onclick="selecionarPrato('.hamburguer')">
                     <img src="imagens/hamburguer.png">
-                    <h1>Hambúrguer</h1>
+                    <h1 class="nome-prato">Hambúrguer</h1>
                     <h2>Suculento e divino!!!</h2>
-                    <h3>22,90</h3>
+                    <div class="valor">
+                        <h3 class="valor-prato">22,90</h3>
+                        <ion-icon class="check hidden" name="checkmark-circle-sharp"></ion-icon>
+                    </div>
                 </button>
-                <button class="food-box hotdog" onclick="selecionarPrato('hotdog')">
+                <button class="food-box hotdog" onclick="selecionarPrato('.hotdog')">
                     <img src="imagens/hotdog.png">
-                    <h1>Hot-Dog</h1>
+                    <h1 class="nome-prato">Hot-Dog</h1>
                     <h2>Clássico e delicioso!!!</h2>
-                    <h3>15,90</h3>
+                    <div class="valor">
+                        <h3 class="valor-prato">15,90</h3>
+                        <ion-icon class="check hidden" name="checkmark-circle-sharp"></ion-icon>
+                    </div>
                 </button>
-                <button class="food-box pizza" onclick="selecionarPrato('pizza')">
+                <button class="food-box pizza" onclick="selecionarPrato('.pizza')">
                     <img src="imagens/pizza.png">
-                    <h1>Pizza</h1>
+                    <h1 class="nome-prato">Pizza</h1>
                     <h2>Melhor massa da cidade e muito queijo!!!</h2>
-                    <h3>17,90</h3>
+                    <div class="valor">
+                        <h3 class="valor-prato">17,90</h3>
+                        <ion-icon class="check hidden" name="checkmark-circle-sharp"></ion-icon>
+                    </div>
                 </button>
             </div>
             <h1>Agora, sua bebida</h1>
             <div class="food bebida">
-                <button class="food-box coca" onclick="selecionarBebida('coca')">
+                <button class="food-box coca" onclick="selecionarBebida('.coca')">
                     <img src="imagens/coca.png">
-                    <h1>Coca-Cola</h1>
+                    <h1 class="nome-bebida">Coca-Cola</h1>
                     <h2>Lata 350ml</h2>
-                    <h3>4,90</h3>
+                    <div class="valor">
+                        <h3 class="valor-bebida">4,90</h3>
+                        <ion-icon class="check hidden" name="checkmark-circle-sharp"></ion-icon>
+                    </div>
                 </button>
-                <button class="food-box suco" onclick="selecionarBebida('suco')">
+                <button class="food-box suco" onclick="selecionarBebida('.suco')">
                     <img src="imagens/suco.png">
-                    <h1>Suco de laranja</h1>
+                    <h1 class="nome-bebida">Suco de laranja</h1>
                     <h2>Copo 500ml</h2>
-                    <h3>7,90</h3>
+                    <div class="valor">
+                        <h3 class="valor-bebida">7,90</h3>
+                        <ion-icon class="check hidden" name="checkmark-circle-sharp"></ion-icon>
+                    </div>
                 </button>
-                <button class="food-box cerveja" onclick="selecionarBebida('cerveja')">
+                <button class="food-box cerveja" onclick="selecionarBebida('.cerveja')">
                     <img src="imagens/cerveja.png">
-                    <h1>Chopp</h1>
+                    <h1 class="nome-bebida">Chopp</h1>
                     <h2>Copo 500ml</h2>
-                    <h3>9,90</h3>
+                    <div class="valor">
+                        <h3 class="valor-bebida">9,90</h3>
+                        <ion-icon class="check hidden" name="checkmark-circle-sharp"></ion-icon>
+                    </div>
                 </button>
             </div>
             <h1>Por fim, sua sobremesa</h1>
             <div class="food sobremesa">
                 <button class="food-box brigadeiro" onclick="selecionarSobremesa('.brigadeiro')">
                     <img src="imagens/brigadeiro.png">
-                    <h1>Brigadeiro</h1>
+                    <h1 class="nome-sobremesa">Brigadeiro</h1>
                     <h2>hmmmmmmmmmmm</h2>
                     <div class="valor">
-                        <h3>3,90</h3>
+                        <h3 class="valor-sobremesa">3,90</h3>
                         <ion-icon class="check hidden" name="checkmark-circle-sharp"></ion-icon>
                     </div>
                     
                 </button>
                 <button class="food-box bolo" onclick="selecionarSobremesa('.bolo')">
                     <img src="imagens/bolo.png">
-                    <h1>Bolo</h1>
+                    <h1 class="nome-sobremesa">Bolo</h1>
                     <h2>Fatia</h2>
                     <div class="valor">
-                        <h3>7,90</h3>
+                        <h3 class="valor-sobremesa">7,90</h3>
                         <ion-icon class="check hidden" name="checkmark-circle-sharp"></ion-icon>
                     </div>
                 </button>
                 <button class="food-box pudim" onclick="selecionarSobremesa('.pudim')">
                     <img src="imagens/pudim.png">
-                    <h1>Pudim</h1>
+                    <h1 class="nome-sobremesa">Pudim</h1>
                     <h2>Mini</h2>
                     <div class="valor">
-                        <h3>5,90</h3>
+                        <h3 class="valor-sobremesa">5,90</h3>
                         <ion-icon class="check hidden" name="checkmark-circle-sharp"></ion-icon>
                     </div>
                 </button>
@@ -96,6 +114,7 @@
         <button class="button">Selecione os 3 itens
             para fechar o pedido</button>
     </footer>
+    
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="script.js"></script>
