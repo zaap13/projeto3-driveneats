@@ -1,12 +1,13 @@
 const prato = new Array(2);
 const bebida = new Array(2);
 const sobremesa = new Array(2);
+const clientData = new Array(3);
 
 const ativar = document.querySelector('.button')
 ativar.disabled = true;
 
-function ativaBotao(){
-    if (prato[0] !== undefined && bebida[0] !== undefined && sobremesa[0] !== undefined){
+function ativaBotao() {
+    if (prato[0] !== undefined && bebida[0] !== undefined && sobremesa[0] !== undefined) {
         ativar.disabled = false;
         ativar.innerHTML = "Fechar Pedido"
         ativar.classList.add("ativo")
@@ -29,7 +30,7 @@ function selecionarPrato(classePrato) {
     if (checking !== null) {
         checking.classList.remove("hidden")
     }
-    
+
     const nomePrato = document.querySelector(`${classePrato} .nome-prato`)
     prato[0] = nomePrato.innerHTML;
     const valorPrato = document.querySelector(`${classePrato} .valor-prato`)
@@ -66,7 +67,7 @@ function selecionarBebida(classeBebida) {
 function selecionarSobremesa(classeSobremesa) {
     const sobremesaSelecionada = document.querySelector(".sobremesa .selecionado")
 
-    if (sobremesaSelecionada !== null) {        
+    if (sobremesaSelecionada !== null) {
         const checking = document.querySelector(".sobremesa .selecionado .check")
         checking.classList.add("hidden")
         sobremesaSelecionada.classList.remove("selecionado")
@@ -90,19 +91,45 @@ function selecionarSobremesa(classeSobremesa) {
     ativaBotao();
 }
 
-    function fecharPedido() {
-        let nomeCliente = prompt("Informe seu nome");
-        let endereco = prompt("Informe seu endereço");
-        document.querySelector(".overlay").style.display = "flex";
-        document.querySelector(".nome1").innerHTML = prato[0];
-        document.querySelector(".nome2").innerHTML = bebida[0];
-        document.querySelector(".nome3").innerHTML = sobremesa[0];
-        document.querySelector(".valor1").innerHTML = prato[1];
-        document.querySelector(".valor2").innerHTML = bebida[1];
-        document.querySelector(".valor3").innerHTML = sobremesa[1];
-        let valorTotal = (Number(prato[1].replace(',','.'))) + (Number(bebida[1].replace(',','.'))) + (Number(sobremesa[1].replace(',','.')));
-        document.querySelector(".valor-total").innerHTML = (valorTotal.toFixed(2)).replace('.',',');
-        document.querySelector(".client-name").innerHTML = nomeCliente;
-        document.querySelector(".client-adress").innerHTML = endereco;
+
+
+
+function fecharPedido() {
+    let nomeCliente = prompt("Informe seu nome");
+    clientData[0] = nomeCliente;
+    let endereco = prompt("Informe seu endereço");
+    clientData[1] = endereco;
+    document.querySelector(".overlay").style.display = "flex";
+    document.querySelector(".nome1").innerHTML = prato[0];
+    document.querySelector(".nome2").innerHTML = bebida[0];
+    document.querySelector(".nome3").innerHTML = sobremesa[0];
+    document.querySelector(".valor1").innerHTML = prato[1];
+    document.querySelector(".valor2").innerHTML = bebida[1];
+    document.querySelector(".valor3").innerHTML = sobremesa[1];
+    let valorTotal = (Number(prato[1].replace(',', '.'))) + (Number(bebida[1].replace(',', '.'))) + (Number(sobremesa[1].replace(',', '.')));
+    clientData[2] = valorTotal;
+    document.querySelector(".valor-total").innerHTML = (valorTotal.toFixed(2)).replace('.', ',');
+    document.querySelector(".client-name").innerHTML = nomeCliente;
+    document.querySelector(".client-adress").innerHTML = endereco;
 }
 
+
+
+function confirmaWpp() {
+    const wppMsg = `Olá, gostaria de fazer o pedido:
+- Prato: ${prato[0]}
+- Bebida: ${bebida[0]}
+- Sobremesa: ${sobremesa[0]}
+Total: R$ ${(clientData[2].toFixed(2)).replace('.', ',')}
+
+Nome: ${clientData[0]}
+Endereço: ${clientData[1]}`
+
+    let msgWpp = encodeURIComponent(wppMsg);
+
+    window.open(`https://wa.me/5543984930900?text=${msgWpp}`)
+}
+
+function cancelaPedido(){
+    document.querySelector(".overlay").style.display = "none";
+}
