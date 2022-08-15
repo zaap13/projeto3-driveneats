@@ -16,6 +16,38 @@
         <h2>Sua comida em 6 minutos</h2>
     </header>
     <main class="main">
+        <div class="overlay">
+            <div class="confirm-box">
+                <h1>Confirme seu pedido</h1>
+                <div class="confirm-valor">
+                    <h2 class="nome1">nome</h2>
+                    <h2 class="valor1">valor</h2>
+                </div>
+                <div class="confirm-valor">
+                    <h2 class="nome2">nome</h2>
+                    <h2 class="valor2">valor</h2>
+                </div>
+                <div class="confirm-valor">
+                    <h2 class="nome3">nome</h2>
+                    <h2 class="valor3">valor</h2>
+                </div>
+                <div class="confirm-valor">
+                    <h1>TOTAL</h1>
+                    <h1 class="valor-total">total</h1>
+                </div>
+                <div class="confirm-valor">
+                    <h1>Nome: </h1>
+                    <h1 class="client-name">nome</h1>
+                </div>
+                <div class="confirm-valor">
+                    <h1>Endereço: </h1>
+                    <h1 class="client-adress">endereço</h1>
+                </div>
+
+                <button class="confirm-button">Tudo certo, pode pedir!</button>
+                <button class="cancel-button">Cancelar</button>
+            </div>
+        </div>
         <div class="container">
             <h1>Primeiro, seu prato</h1>
             <div class="food prato">
@@ -111,8 +143,7 @@
         </div>
     </main>
     <footer class="footer">
-        <button class="button">Selecione os 3 itens
-            para fechar o pedido</button>
+        <button class="button" onclick="fecharPedido(this)">Selecione os 3 itens para fechar o pedido</button>
     </footer>
     
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

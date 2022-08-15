@@ -2,6 +2,17 @@ const prato = new Array(2);
 const bebida = new Array(2);
 const sobremesa = new Array(2);
 
+const ativar = document.querySelector('.button')
+ativar.disabled = true;
+
+function ativaBotao(){
+    if (prato[0] !== undefined && bebida[0] !== undefined && sobremesa[0] !== undefined){
+        ativar.disabled = false;
+        ativar.innerHTML = "Fechar Pedido"
+        ativar.classList.add("ativo")
+    }
+}
+
 function selecionarPrato(classePrato) {
     const pratoSelecionado = document.querySelector(".prato .selecionado")
 
@@ -23,6 +34,8 @@ function selecionarPrato(classePrato) {
     prato[0] = nomePrato.innerHTML;
     const valorPrato = document.querySelector(`${classePrato} .valor-prato`)
     prato[1] = valorPrato.innerHTML;
+
+    ativaBotao();
 }
 
 function selecionarBebida(classeBebida) {
@@ -46,6 +59,8 @@ function selecionarBebida(classeBebida) {
     bebida[0] = nomeBebida.innerHTML;
     const valorBebida = document.querySelector(`${classeBebida} .valor-bebida`)
     bebida[1] = valorBebida.innerHTML;
+
+    ativaBotao();
 }
 
 function selecionarSobremesa(classeSobremesa) {
@@ -71,12 +86,23 @@ function selecionarSobremesa(classeSobremesa) {
     sobremesa[0] = nomeSobremesa.innerHTML;
     const valorSobremesa = document.querySelector(`${classeSobremesa} .valor-sobremesa`)
     sobremesa[1] = valorSobremesa.innerHTML;
+
+    ativaBotao();
 }
 
-/*function ativaBotao(){
-    if (prato[0] !== undefined && bebida[0] !== undefined && sobremesa[0] !== undefined){
-        console.log("teste");
-    }
+    function fecharPedido() {
+        let nomeCliente = prompt("Informe seu nome");
+        let endereco = prompt("Informe seu endereço");
+        document.querySelector(".overlay").style.display = "flex";
+        document.querySelector(".nome1").innerHTML = prato[0];
+        document.querySelector(".nome2").innerHTML = bebida[0];
+        document.querySelector(".nome3").innerHTML = sobremesa[0];
+        document.querySelector(".valor1").innerHTML = prato[1];
+        document.querySelector(".valor2").innerHTML = bebida[1];
+        document.querySelector(".valor3").innerHTML = sobremesa[1];
+        let valorTotal = (Number(prato[1].replace(',','.'))) + (Number(bebida[1].replace(',','.'))) + (Number(sobremesa[1].replace(',','.')));
+        document.querySelector(".valor-total").innerHTML = (valorTotal.toFixed(2)).replace('.',',');
+        document.querySelector(".client-name").innerHTML = nomeCliente;
+        document.querySelector(".client-adress").innerHTML = endereco;
 }
 
-ativaBotao();*/
